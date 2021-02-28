@@ -1,7 +1,12 @@
 import React from 'react';
 import Person from '../Person/Person';
 import './Cohort.css';
+import { Component } from 'react'
 
-// COHORT COMPONENT CODE GOES HERE
+class Cohort extends Component {
+  constructor() {
+
+  }
+}
 
 export default Cohort;
