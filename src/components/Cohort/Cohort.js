@@ -3,10 +3,15 @@ import Person from '../Person/Person';
 import './Cohort.css';
 import { Component } from 'react'
 
-class Cohort extends Component {
-  constructor() {
+const Cohort = ({name}) => {
 
-  }
+  return (
+    <div className='ideas-container'>
+      <Person />
+      <Person />
+      <Person />
+    </div>
+  )
 }
 
 export default Cohort;
