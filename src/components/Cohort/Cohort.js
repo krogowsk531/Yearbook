@@ -3,13 +3,23 @@ import Person from '../Person/Person';
 import './Cohort.css';
 import { Component } from 'react'
 
-const Cohort = ({name}) => {
+const Cohort = (props) => {
+  const { name } = props
+
+  const peopleCards = name.map(person => {
+    return (
+      <Person
+        name={person.name}
+        photo={person.photo}
+        quote={person.quote}
+        superlative={person.superlative}
+        />
+      )
+  })
 
   return (
     <div className='ideas-container'>
-      <Person />
-      <Person />
-      <Person />
+      {peopleCards}
     </div>
   )
 }
