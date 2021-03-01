@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Cohort from '../Cohort/Cohort';
 import people from '../../data/yearbook-data.js';
 import Person from '../Person/Person'
+import Form from '../Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -23,6 +24,8 @@ class App extends Component {
         <Cohort name={this.state.staff} />
         <h2>Students</h2>
         <Cohort name={this.state.students} />
+        <h2>Add a Student</h2>
+        <Form />
       </div>
     );
   }
