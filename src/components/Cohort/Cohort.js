@@ -4,7 +4,7 @@ import './Cohort.css';
 import { Component } from 'react'
 
 const Cohort = (props) => {
-  const { name } = props
+  const { name, removeStudent } = props
 
   const peopleCards = name.map(person => {
     return (
@@ -13,6 +13,7 @@ const Cohort = (props) => {
         photo={person.photo}
         quote={person.quote}
         superlative={person.superlative}
+        removeStudent={removeStudent}
         />
       )
   })

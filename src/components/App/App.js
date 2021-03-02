@@ -18,6 +18,11 @@ class App extends Component {
     this.setState({students: this.state.students.concat(newStudent)})
   }
 
+  removeStudent = (id) => {
+    const filteredStudents = this.state.students.filter(student => student.id != id);
+    this.setState({ students: filteredStudents})
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,7 +32,7 @@ class App extends Component {
         <h2>Staff</h2>
         <Cohort name={this.state.staff} />
         <h2>Students</h2>
-        <Cohort name={this.state.students} />
+        <Cohort name={this.state.students} removeStudent={this.removeStudent}/>
         <h2>Add a Student</h2>
         <Form addStudent={this.addStudent} />
       </div>
