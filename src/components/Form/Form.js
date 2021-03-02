@@ -2,8 +2,8 @@ import React from 'react';
 import { Component } from 'react'
 
 class Form extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       name: '',
       quote: '',
@@ -14,6 +14,16 @@ class Form extends Component {
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value })
+  }
+
+  submitStudent = (event) => {
+    event.preventDefault()
+    const name = this.state.name
+    const quote = this.state.quote
+    const superlative = this.state.superlative
+    const photo = this.state.photo
+    const aNewStudent = { name, quote, superlative, photo }
+    this.props.addStudent(aNewStudent)
   }
 
   render() {
@@ -47,7 +57,7 @@ class Form extends Component {
           value={this.state.photo}
           onChange={event => this.handleChange(event)}
         />
-        <button>SUBMIT</button>
+        <button type='submit' onClick={this.submitStudent}>SUBMIT</button>
       </form>
     )
   }

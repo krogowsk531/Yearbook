@@ -14,6 +14,10 @@ class App extends Component {
     }
   }
 
+  addStudent = (newStudent) => {
+    this.setState({students: this.state.students.concat(newStudent)})
+  }
+
   render() {
     return (
       <div className="App">
@@ -25,7 +29,7 @@ class App extends Component {
         <h2>Students</h2>
         <Cohort name={this.state.students} />
         <h2>Add a Student</h2>
-        <Form />
+        <Form addStudent={this.addStudent} />
       </div>
     );
   }
