@@ -3,12 +3,15 @@ import Person from '../Person/Person';
 import './Cohort.css';
 import { Component } from 'react'
 
-const Cohort = (props) => {
-  const { name, removeStudent } = props
+const Cohort = ({persons, removeStudent}) => {
 
-  const peopleCards = name.map(person => {
+  console.log('Persons', persons)
+  console.log('REMOVE', removeStudent)
+
+  const peopleCards = persons.map(person => {
     return (
       <Person
+        id={person.id}
         name={person.name}
         photo={person.photo}
         quote={person.quote}

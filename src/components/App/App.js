@@ -19,8 +19,11 @@ class App extends Component {
   }
 
   removeStudent = (id) => {
+    console.log("REMOVE STUDENT", id)
     const filteredStudents = this.state.students.filter(student => student.id != id);
     this.setState({ students: filteredStudents})
+    const filteredStaff = this.state.staff.filter(staff => staff.id != id);
+    this.setState({ staff: filteredStaff})
   }
 
   render() {
@@ -30,9 +33,9 @@ class App extends Component {
       <h1>Turing Yearbook</h1>
       </header>
         <h2>Staff</h2>
-        <Cohort name={this.state.staff} />
+        <Cohort persons={this.state.staff} removeStudent={this.removeStudent}/>
         <h2>Students</h2>
-        <Cohort name={this.state.students} removeStudent={this.removeStudent}/>
+        <Cohort persons={this.state.students} removeStudent={this.removeStudent}/>
         <h2>Add a Student</h2>
         <Form addStudent={this.addStudent} />
       </div>

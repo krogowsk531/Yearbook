@@ -8,7 +8,8 @@ class Form extends Component {
       name: '',
       quote: '',
       superlative: '',
-      photo: ''
+      photo: '',
+      id: 0
     }
   }
 
@@ -18,11 +19,12 @@ class Form extends Component {
 
   submitStudent = (event) => {
     event.preventDefault()
+    const id = this.state.id || Date.now()
     const name = this.state.name
     const quote = this.state.quote
     const superlative = this.state.superlative
     const photo = this.state.photo
-    const aNewStudent = { name, quote, superlative, photo }
+    const aNewStudent = { id, name, quote, superlative, photo }
     this.props.addStudent(aNewStudent)
   }
 
